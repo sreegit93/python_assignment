@@ -1,0 +1,20 @@
+{
+    "name": "Python DevOps",
+    "context": ".",
+    "dockerFile": "Dockerfile",
+    "settings": {
+        "python.pythonPath": "/usr/local/bin/python"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker",
+        "editorconfig.editorconfig"
+    ],
+    "postCreateCommand": "pip install -r requirements.txt",
+    "remoteUser": "root",
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached"
+    ],
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+}
